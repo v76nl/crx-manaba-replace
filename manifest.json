@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Manaba Replace",
+    "version": "1.0",
+    "description": "manabaページにおいて、文字列を別の文字列に置換する (特に本名・学籍番号など) ※やや表示から置換まで遅延あり",
+    "permissions": [
+        "scripting",
+        "storage",
+        "activeTab"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://room.chuo-u.ac.jp/ct/*"],
+            "js": ["content.js"],
+            "run_at": "document_idle"
+        }
+    ]
+}
