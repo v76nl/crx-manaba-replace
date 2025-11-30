@@ -1,17 +1,19 @@
-chrome.storage.local.get("replacements", (data) => {
-    const replacements = data.replacements || {};
-    function replaceText(node) {
-        if (node.nodeType === Node.TEXT_NODE) {
-            let text = node.nodeValue;
-            for (const [key, value] of Object.entries(replacements)) {
-                text = text.replaceAll(key, value);
-            }
-            node.nodeValue = text;
-        } else {
-            for (const child of node.childNodes) {
-                replaceText(child);
-            }
+function replaceText(node, rules) {
+    if (node.nodeType === Node.TEXT_NODE) {
+        let text = node.nodeValue;
+        for (const key in rules) {
+            const value = rules[key];
+            text = text.replaceAll(key, value);
+        }
+        node.nodeValue = text;
+    } else {
+        for (const child of node.childNodes) {
+            replaceText(child, rules);
         }
     }
-    replaceText(document.body);
+}
+
+chrome.storage.local.get("replacements", function(data) {
+    const rules = data.replacements || {};
+    replaceText(document.body, rules);
 });
