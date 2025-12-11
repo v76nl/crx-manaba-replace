@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Manaba Replace",
+    "name": "manaba Replace",
     "version": "1.0",
     "description": "manabaページにおいて、文字列を別の文字列に置換する (特に本名・学籍番号など) ※やや表示から置換まで遅延あり",
     "permissions": [
