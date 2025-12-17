@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "manaba Replace",
     "version": "1.0",
-    "description": "manabaページにおいて、文字列を任意の別の文字列に置換する (特に本名・学籍番号など) ※初回表示から置換完了するまでやや遅延があることに注意してください",
+    "description": "manabaページにおいて、文字列を任意の別の文字列に置換する拡張機能です。特に本名・学籍番号を置換するのがおすすめです。ページ表示から置換が完了するまでやや遅延があることに注意してください。",
     "permissions": [
         "scripting",
         "storage",
